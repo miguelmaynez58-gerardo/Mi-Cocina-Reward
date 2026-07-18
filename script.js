@@ -8,6 +8,8 @@ const supabase = window.supabase.createClient(
 
 async function buscarPuntos() {
 
+  alert("El botón sí funciona");
+
   const telefono = document.getElementById("telefono").value;
 
   const { data, error } = await supabase
