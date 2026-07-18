@@ -1,18 +1,24 @@
-async function buscarPuntos() {
-  const telefono = document.getElementById("telefono").value;
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Cocina Rewards</title>
+</head>
 
-  const { data, error } = await supabase
-    .from("clientes")
-    .select("*")
-    .eq("telefono", telefono)
-    .single();
+<body>
 
-  if (error) {
-    document.getElementById("resultado").innerHTML =
-      "No encontramos tu cuenta.";
-    return;
-  }
+<h1>🌮 Mi Cocina Rewards</h1>
 
-  document.getElementById("resultado").innerHTML =
-    "Hola " + data.nombre + "! Tienes " + data.puntos + " puntos.";
-}
+<p>Acumula puntos y consigue recompensas en Mi Cocina Express.</p>
+
+<h2>Consulta tus puntos</h2>
+
+<input id="telefono" type="text" placeholder="Escribe tu teléfono">
+
+<button onclick="buscarPuntos()">Buscar</button>
+
+<h3 id="resultado"></h3>
+
+<script src="script.js"></script>
+
+</body>
+</html>
