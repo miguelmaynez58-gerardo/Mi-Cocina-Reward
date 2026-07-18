@@ -7,6 +7,7 @@ const supabase = window.supabase.createClient(
 );
 
 async function buscarPuntos() {
+
   const telefono = document.getElementById("telefono").value;
 
   const { data, error } = await supabase
@@ -18,6 +19,7 @@ async function buscarPuntos() {
   if (error) {
     document.getElementById("resultado").innerHTML =
       "No encontramos tu cuenta.";
+    console.log(error);
     return;
   }
 
