@@ -1,3 +1,11 @@
+const supabaseUrl = "https://qekczymcxxrkszoxnijx.supabase.co";
+const supabaseKey = "sb_publishable_JxxKjUdNSK2Pb6FbEG5vRg_fCPw4O0c";
+
+const supabase = window.supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+);
+
 async function buscarPuntos() {
   const telefono = document.getElementById("telefono").value;
 
